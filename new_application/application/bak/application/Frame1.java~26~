@@ -1,0 +1,471 @@
+package application;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import com.borland.dx.sql.dataset.Database;
+import com.borland.dbswing.TableScrollPane;
+import java.awt.*;
+import com.borland.dbswing.JdbTable;
+import com.borland.dx.sql.dataset.*;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import com.borland.dx.sql.dataset.Database;
+import com.borland.dx.sql.dataset.QueryDataSet;
+import com.borland.dbswing.JdbTable;
+import java.awt.*;
+import com.borland.dx.sql.dataset.*;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.BorderFactory;
+import javax.swing.border.Border;
+import javax.swing.JRadioButton;
+import javax.swing.JLabel;
+import javax.swing.ButtonGroup;
+import com.borland.dbswing.JdbTextArea;
+import com.borland.dbswing.JdbLabel;
+import javax.swing.border.EtchedBorder;
+import com.borland.dbswing.JdbStatusLabel;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
+import javax.swing.JScrollPane;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
+import com.borland.jbcl.layout.PaneLayout;
+import com.borland.jbcl.layout.*;
+
+/**
+ * <p>Title: </p>
+ *
+ * <p>Description: </p>
+ *
+ * <p>Copyright: Copyright (c) 2008</p>
+ *
+ * <p>Company: </p>
+ *
+ * @author not attributable
+ * @version 1.0
+ */
+public class Frame1 extends JFrame {
+    JPanel contentPane;
+    Database database1 = new Database();
+    QueryDataSet queryDataSet1 = new QueryDataSet();
+    JPanel jPanel2 = new JPanel();
+    JPanel jPanel3 = new JPanel();
+    Border border1 = BorderFactory.createLineBorder(SystemColor.controlText, 2);
+    Border border2 = BorderFactory.createLineBorder(SystemColor.controlText, 2);
+    JRadioButton jRadioButton1 = new JRadioButton();
+    JRadioButton jRadioButton2 = new JRadioButton();
+    JRadioButton jRadioButton3 = new JRadioButton();
+    JRadioButton jRadioButton4 = new JRadioButton();
+    JRadioButton jRadioButton5 = new JRadioButton();
+    JRadioButton jRadioButton6 = new JRadioButton();
+    JRadioButton jRadioButton7 = new JRadioButton();
+    JRadioButton jRadioButton8 = new JRadioButton();
+    JRadioButton jRadioButton9 = new JRadioButton();
+    JRadioButton jRadioButton10 = new JRadioButton();
+    JRadioButton jRadioButton11 = new JRadioButton();
+    JLabel jLabel1 = new JLabel();
+    JLabel jLabel2 = new JLabel();
+    JLabel jLabel3 = new JLabel();
+    JLabel jLabel4 = new JLabel();
+    JLabel jLabel5 = new JLabel();
+    JLabel jLabel6 = new JLabel();
+    ButtonGroup buttonGroup1 = new ButtonGroup();
+    ButtonGroup buttonGroup2 = new ButtonGroup();
+    JdbTextArea jdbTextArea1 = new JdbTextArea();
+    JdbLabel jdbLabel1 = new JdbLabel();
+    Border border3 = BorderFactory.createEtchedBorder(EtchedBorder.RAISED,
+            Color.white, new Color(148, 145, 140));
+    Border border4 = BorderFactory.createEtchedBorder(EtchedBorder.RAISED,
+            Color.white, new Color(148, 145, 140));
+    JButton jButton1 = new JButton();
+    JPanel jPanel1 = new JPanel();
+    JScrollPane jScrollPane1 = new JScrollPane();
+    JComboBox jComboBox1 = new JComboBox();
+    public Frame1() {
+        try {
+            setDefaultCloseOperation(EXIT_ON_CLOSE);
+            jbInit();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    /**
+     * Component initialization.
+     *
+     * @throws java.lang.Exception
+     */
+    private void jbInit() throws Exception {
+        contentPane = (JPanel) getContentPane();
+       // contentPane.setLayout(borderLayout1);
+        setSize(new Dimension(450, 315));
+        setTitle("Frame Title");
+        database1.setConnection(new ConnectionDescriptor("jdbc:odbc:MYSQLodbc",
+                "monty", "some_pass", false, "sun.jdbc.odbc.JdbcOdbcDriver"));
+        database1.setDatabaseName("");
+        queryDataSet1.setQuery(new com.borland.dx.sql.dataset.QueryDescriptor(
+                database1, "SELECT * FROM rbs_fault", null, true, Load.ALL));
+        jPanel2.setBorder(border3);
+        jPanel2.setBounds(new Rectangle(3, 2, 157, 65));
+        jPanel3.setBorder(border4);
+        jPanel3.setBounds(new Rectangle(163, 2, 186, 64));
+        jRadioButton1.setSelected(true);
+        jRadioButton1.setText("CF");
+        jRadioButton1.addActionListener(new Frame1_jRadioButton1_actionAdapter(this));
+        jRadioButton2.setText("TF");
+        jRadioButton2.addActionListener(new Frame1_jRadioButton2_actionAdapter(this));
+        jRadioButton3.setText("TRX");
+        jRadioButton3.addActionListener(new Frame1_jRadioButton3_actionAdapter(this));
+        jRadioButton4.setText("TX");
+        jRadioButton4.addActionListener(new Frame1_jRadioButton4_actionAdapter(this));
+        jRadioButton5.setText("RX");
+        jRadioButton5.addActionListener(new Frame1_jRadioButton5_actionAdapter(this));
+        jRadioButton6.setText("TS");
+        jRadioButton6.addActionListener(new Frame1_jRadioButton6_actionAdapter(this));
+        jRadioButton7.setSelected(true);
+        jRadioButton7.setText("1A");
+        jRadioButton7.addActionListener(new Frame1_jRadioButton7_actionAdapter(this));
+        jRadioButton8.setText("1B");
+        jRadioButton8.addActionListener(new Frame1_jRadioButton8_actionAdapter(this));
+        jRadioButton9.setText("2A");
+        jRadioButton9.addActionListener(new Frame1_jRadioButton9_actionAdapter(this));
+        jRadioButton10.setSelectedIcon(null);
+        jRadioButton10.setText("1B");
+        jRadioButton10.addActionListener(new
+                                         Frame1_jRadioButton10_actionAdapter(this));
+
+        jRadioButton11.setToolTipText("");
+        jRadioButton11.setText("2B");
+        jRadioButton11.addActionListener(new
+                                         Frame1_jRadioButton11_actionAdapter(this));
+        this.setResizable(false);
+        for(int i=0;i<55;i++)
+        jComboBox1.addItem(Integer.toString(i));
+        jLabel1.setText("Internal:");
+        jLabel2.setText("External:");
+        jLabel3.setText("CF ");
+        jLabel3.setBounds(new Rectangle(134, 66, 56, 16));
+        jLabel4.setText("I1A:");
+        jLabel4.setBounds(new Rectangle(181, 67, 45, 17));
+        jLabel5.setText("0");
+        jLabel5.setBounds(new Rectangle(227, 67, 52, 17));
+        jLabel6.setText("CF I1A:0");
+        jLabel6.setBounds(new Rectangle(283, 70, 71, 14));
+        jdbTextArea1.setFont(new java.awt.Font("Dialog", Font.PLAIN, 15));
+        jdbTextArea1.setText("jdbTextArea1");
+        jdbTextArea1.setColumnName("FAULT");
+        jdbTextArea1.setDataSet(queryDataSet1);
+        jdbLabel1.setText("jdbLabel1");
+        jdbLabel1.setColumnName("FAULTNAME");
+        jdbLabel1.setDataSet(queryDataSet1);
+        jdbLabel1.setBounds(new Rectangle(3, 69, 151, 19));
+        jLabel3.setVisible(false);
+        jLabel4.setVisible(false);
+        jLabel5.setVisible(false);
+        jLabel6.setVisible(false);
+        jButton1.setBounds(new Rectangle(353, 27, 70, 24));
+        jButton1.setText("Update");
+        jButton1.addActionListener(new Frame1_jButton1_actionAdapter(this));
+        jPanel1.setLayout(null);
+        contentPane.setLayout(null);
+        jScrollPane1.setBounds(new Rectangle(2, 95, 443, 193));
+        jPanel1.setBounds(new Rectangle(1, 4, 433, 93));
+        jComboBox1.setBounds(new Rectangle(353, 3, 69, 20));
+        jComboBox1.addActionListener(new Frame1_jComboBox1_actionAdapter(this));
+        jPanel2.add(jRadioButton1, null);
+        jPanel2.add(jRadioButton2, null);
+        jPanel2.add(jRadioButton3, null);
+        jPanel2.add(jRadioButton5);
+        jPanel2.add(jRadioButton4, null);
+        jPanel2.add(jRadioButton6, null);
+        jPanel3.add(jLabel1);
+        jPanel3.add(jRadioButton7);
+        jPanel3.add(jRadioButton8);
+        jPanel3.add(jRadioButton9);
+        jPanel3.add(jLabel2);
+        jPanel3.add(jRadioButton10);
+        jPanel3.add(jRadioButton11);
+        contentPane.add(jScrollPane1, null);
+        jScrollPane1.getViewport().add(jdbTextArea1);
+        jPanel1.add(jdbLabel1, null);
+        jPanel1.add(jButton1, null);
+        jPanel1.add(jLabel6, null);
+        jPanel1.add(jLabel5, null);
+        jPanel1.add(jLabel3, null);
+        jPanel1.add(jLabel4, null);
+        jPanel1.add(jPanel2, null);
+        jPanel1.add(jPanel3, null);
+        jPanel1.add(jComboBox1);
+        buttonGroup1.add(jRadioButton1);
+        buttonGroup1.add(jRadioButton2);
+        buttonGroup1.add(jRadioButton3);
+        buttonGroup1.add(jRadioButton6);
+        buttonGroup1.add(jRadioButton4);
+        buttonGroup1.add(jRadioButton5);
+        buttonGroup2.add(jRadioButton7);
+        buttonGroup2.add(jRadioButton8);
+        buttonGroup2.add(jRadioButton9);
+        buttonGroup2.add(jRadioButton10);
+        buttonGroup2.add(jRadioButton11);
+        contentPane.add(jPanel1, null);
+        jButton1.doClick();
+        jComboBox1.setEditable(true);
+    }
+
+    public void jRadioButton1_actionPerformed(ActionEvent e) {
+        jLabel3.setText("CF ");
+        jLabel6.setText(jLabel3.getText() + jLabel4.getText() + jLabel5.getText());
+        jButton1.doClick();
+    }
+
+    public void jRadioButton2_actionPerformed(ActionEvent e) {
+        jLabel3.setText("TF ");
+        jLabel6.setText(jLabel3.getText() + jLabel4.getText() + jLabel5.getText());
+        jButton1.doClick();
+    }
+
+    public void jRadioButton3_actionPerformed(ActionEvent e) {
+        jLabel3.setText("TRX ");
+        jLabel6.setText(jLabel3.getText() + jLabel4.getText() + jLabel5.getText());
+        jButton1.doClick();
+    }
+
+    public void jRadioButton5_actionPerformed(ActionEvent e) {
+        jLabel3.setText("RX ");
+        jLabel6.setText(jLabel3.getText() + jLabel4.getText() + jLabel5.getText());
+        jButton1.doClick();
+    }
+
+    public void jRadioButton4_actionPerformed(ActionEvent e) {
+        jLabel3.setText("TX ");
+        jLabel6.setText(jLabel3.getText() + jLabel4.getText() + jLabel5.getText());
+        jButton1.doClick();
+    }
+
+    public void jRadioButton6_actionPerformed(ActionEvent e) {
+        jLabel3.setText("TS ");
+        jLabel6.setText(jLabel3.getText() + jLabel4.getText() + jLabel5.getText());
+        jButton1.doClick();
+    }
+
+    public void jRadioButton7_actionPerformed(ActionEvent e) {
+        jLabel4.setText("I1A:");
+        jLabel6.setText(jLabel3.getText() + jLabel4.getText() + jLabel5.getText());
+        jButton1.doClick();
+    }
+
+    public void jRadioButton8_actionPerformed(ActionEvent e) {
+        jLabel4.setText("I1B:");
+        jLabel6.setText(jLabel3.getText() + jLabel4.getText() + jLabel5.getText());
+        jButton1.doClick();
+    }
+
+    public void jRadioButton9_actionPerformed(ActionEvent e) {
+        jLabel4.setText("I2A:");
+        jLabel6.setText(jLabel3.getText() + jLabel4.getText() + jLabel5.getText());
+        jButton1.doClick();
+    }
+
+    public void jRadioButton10_actionPerformed(ActionEvent e) {
+        jLabel4.setText("E1B:");
+        jLabel6.setText(jLabel3.getText() + jLabel4.getText() + jLabel5.getText());
+        jButton1.doClick();
+    }
+
+    public void jRadioButton11_actionPerformed(ActionEvent e) {
+        jLabel4.setText("E2B:");
+        jLabel6.setText(jLabel3.getText() + jLabel4.getText() + jLabel5.getText());
+        jButton1.doClick();
+    }
+
+
+    public void jButton1_actionPerformed(ActionEvent a) {
+        queryDataSet1.close();
+                QueryDescriptor descriptor = new QueryDescriptor(database1,
+                        "SELECT * FROM rbs_fault WHERE FAULTNAME LIKE '%" +
+                        jLabel6.getText() + "%' ORDER BY FAULT,FAULTNAME", true);
+                QueryDescriptor descriptor2 = new QueryDescriptor(database1,
+                        "SELECT * FROM rbs_fault", true);
+
+             try{
+                 queryDataSet1.setQuery(descriptor);
+                 //queryDataSet1.executeQuery();
+                // if(queryDataSet1.isDisplayErrors()==true)
+                 queryDataSet1.open();
+             }
+             catch(IllegalArgumentException e){
+                 queryDataSet1.refresh();
+     }
+    }
+
+    public void jComboBox1_actionPerformed(ActionEvent e) {
+        jLabel5.setText(jComboBox1.getSelectedItem()+ " ");
+        jLabel6.setText(jLabel3.getText() + jLabel4.getText() + jLabel5.getText());
+        jButton1.doClick();
+    }
+
+}
+
+
+class Frame1_jButton1_actionAdapter implements ActionListener {
+    private Frame1 adaptee;
+    Frame1_jButton1_actionAdapter(Frame1 adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        adaptee.jButton1_actionPerformed(e);
+    }
+}
+
+
+class Frame1_jComboBox1_actionAdapter implements ActionListener {
+    private Frame1 adaptee;
+    Frame1_jComboBox1_actionAdapter(Frame1 adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        adaptee.jComboBox1_actionPerformed(e);
+    }
+}
+
+
+class Frame1_jRadioButton11_actionAdapter implements ActionListener {
+    private Frame1 adaptee;
+    Frame1_jRadioButton11_actionAdapter(Frame1 adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        adaptee.jRadioButton11_actionPerformed(e);
+    }
+}
+
+
+class Frame1_jRadioButton10_actionAdapter implements ActionListener {
+    private Frame1 adaptee;
+    Frame1_jRadioButton10_actionAdapter(Frame1 adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        adaptee.jRadioButton10_actionPerformed(e);
+    }
+}
+
+
+class Frame1_jRadioButton9_actionAdapter implements ActionListener {
+    private Frame1 adaptee;
+    Frame1_jRadioButton9_actionAdapter(Frame1 adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        adaptee.jRadioButton9_actionPerformed(e);
+    }
+}
+
+
+class Frame1_jRadioButton8_actionAdapter implements ActionListener {
+    private Frame1 adaptee;
+    Frame1_jRadioButton8_actionAdapter(Frame1 adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        adaptee.jRadioButton8_actionPerformed(e);
+    }
+}
+
+
+class Frame1_jRadioButton7_actionAdapter implements ActionListener {
+    private Frame1 adaptee;
+    Frame1_jRadioButton7_actionAdapter(Frame1 adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        adaptee.jRadioButton7_actionPerformed(e);
+    }
+}
+
+
+class Frame1_jRadioButton6_actionAdapter implements ActionListener {
+    private Frame1 adaptee;
+    Frame1_jRadioButton6_actionAdapter(Frame1 adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        adaptee.jRadioButton6_actionPerformed(e);
+    }
+}
+
+
+class Frame1_jRadioButton4_actionAdapter implements ActionListener {
+    private Frame1 adaptee;
+    Frame1_jRadioButton4_actionAdapter(Frame1 adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        adaptee.jRadioButton4_actionPerformed(e);
+    }
+}
+
+
+class Frame1_jRadioButton5_actionAdapter implements ActionListener {
+    private Frame1 adaptee;
+    Frame1_jRadioButton5_actionAdapter(Frame1 adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        adaptee.jRadioButton5_actionPerformed(e);
+    }
+}
+
+
+class Frame1_jRadioButton3_actionAdapter implements ActionListener {
+    private Frame1 adaptee;
+    Frame1_jRadioButton3_actionAdapter(Frame1 adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        adaptee.jRadioButton3_actionPerformed(e);
+    }
+}
+
+
+class Frame1_jRadioButton2_actionAdapter implements ActionListener {
+    private Frame1 adaptee;
+    Frame1_jRadioButton2_actionAdapter(Frame1 adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        adaptee.jRadioButton2_actionPerformed(e);
+    }
+}
+
+
+class Frame1_jRadioButton1_actionAdapter implements ActionListener {
+    private Frame1 adaptee;
+    Frame1_jRadioButton1_actionAdapter(Frame1 adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        adaptee.jRadioButton1_actionPerformed(e);
+    }
+}

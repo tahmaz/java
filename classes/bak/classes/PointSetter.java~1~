@@ -1,0 +1,25 @@
+package classes;
+
+
+/**
+ *
+ * <p>Title: </p>
+ *
+ * <p>Description: </p>
+ *
+ * <p>Copyright: Copyright (c) 2008</p>
+ *
+ * <p>Company: </p>
+ *
+ * @author not attributable
+ * @version 1.0
+ */
+import java.awt.Point;
+
+public class PointSetter {
+    public static void main(String[] arguments) {
+        Point location=new Point(4,13);
+
+        System.out.println("Starting location: ");
+    }
+}

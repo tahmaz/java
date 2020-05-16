@@ -1,0 +1,54 @@
+package telnet_client;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+
+import javax.swing.*;
+
+/**
+ * <p>Title: </p>
+ *
+ * <p>Description: </p>
+ *
+ * <p>Copyright: Copyright (c) 2009</p>
+ *
+ * <p>Company: </p>
+ *
+ * @author not attributable
+ * @version 1.0
+ */
+public class Frame1 extends JFrame {
+    JPanel contentPane;
+    BorderLayout borderLayout1 = new BorderLayout();
+
+    public Frame1() {
+        try {
+            setDefaultCloseOperation(EXIT_ON_CLOSE);
+            jbInit();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    /**
+     * Component initialization.
+     *
+     * @throws java.lang.Exception
+     */
+    private void jbInit() throws Exception {
+        contentPane = (JPanel) getContentPane();
+        contentPane.setLayout(borderLayout1);
+        setSize(new Dimension(400, 300));
+        setTitle("Frame Title");
+        try {
+UIManager.setLookAndFeel(
+ UIManager.getCrossPlatformLookAndFeelClassName());
+ SwingUtilities.updateComponentTreeUI(this);
+ }
+        catch (Exception e) {
+System.out.println("Cant set look and feel:" + e.getMessage());
+e.printStackTrace();
+}
+
+    }
+}

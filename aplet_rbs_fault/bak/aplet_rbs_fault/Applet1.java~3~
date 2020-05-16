@@ -1,0 +1,214 @@
+package aplet_rbs_fault;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.*;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.BorderFactory;
+import javax.swing.border.Border;
+import javax.swing.JRadioButton;
+import javax.swing.JLabel;
+import javax.swing.ButtonGroup;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
+import javax.swing.border.EtchedBorder;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
+import javax.swing.JScrollPane;
+import javax.swing.*;
+import com.borland.dx.sql.dataset.Database;
+import com.borland.dbswing.JdbTable;
+import com.borland.dbswing.TableScrollPane;
+import com.borland.dbswing.JdbTextArea;
+import com.borland.dbswing.JdbLabel;
+import com.borland.dx.sql.dataset.QueryDataSet;
+import com.borland.dx.sql.dataset.*;
+
+/**
+ * <p>Title: </p>
+ *
+ * <p>Description: </p>
+ *
+ * <p>Copyright: Copyright (c) 2008</p>
+ *
+ * <p>Company: </p>
+ *
+ * @author not attributable
+ * @version 1.0
+ */
+
+
+public class Applet1 extends Applet {
+    boolean isStandalone = false;
+    BorderLayout borderLayout1 = new BorderLayout();
+    JPanel jPanel2 = new JPanel();
+    JPanel jPanel3 = new JPanel();
+    JTextField jTextField1 = new JTextField();
+    Border border1 = BorderFactory.createLineBorder(SystemColor.controlText, 2);
+    Border border2 = BorderFactory.createLineBorder(SystemColor.controlText, 2);
+    JRadioButton jRadioButton1 = new JRadioButton();
+    JRadioButton jRadioButton2 = new JRadioButton();
+    JRadioButton jRadioButton3 = new JRadioButton();
+    JRadioButton jRadioButton4 = new JRadioButton();
+    JRadioButton jRadioButton5 = new JRadioButton();
+    JRadioButton jRadioButton6 = new JRadioButton();
+    JRadioButton jRadioButton7 = new JRadioButton();
+    JRadioButton jRadioButton8 = new JRadioButton();
+    JRadioButton jRadioButton9 = new JRadioButton();
+    JRadioButton jRadioButton10 = new JRadioButton();
+    JRadioButton jRadioButton11 = new JRadioButton();
+    JLabel jLabel1 = new JLabel();
+    JLabel jLabel2 = new JLabel();
+    JLabel jLabel3 = new JLabel();
+    JLabel jLabel4 = new JLabel();
+    JLabel jLabel5 = new JLabel();
+    JLabel jLabel6 = new JLabel();
+    ButtonGroup buttonGroup1 = new ButtonGroup();
+    ButtonGroup buttonGroup2 = new ButtonGroup();
+    Border border3 = BorderFactory.createEtchedBorder(EtchedBorder.RAISED,
+            Color.white, new Color(148, 145, 140));
+    Border border4 = BorderFactory.createEtchedBorder(EtchedBorder.RAISED,
+            Color.white, new Color(148, 145, 140));
+    JButton jButton1 = new JButton();
+    JPanel jPanel1 = new JPanel();
+    JPanel jPanel4 = new JPanel();
+    BorderLayout borderLayout2 = new BorderLayout();
+    BorderLayout borderLayout3 = new BorderLayout();
+    JScrollPane jScrollPane1 = new JScrollPane();
+    JdbTextArea jdbTextArea1 = new JdbTextArea();
+    JdbLabel jdbLabel1 = new JdbLabel();
+    QueryDataSet queryDataSet1 = new QueryDataSet();
+    Database database1 = new Database();
+    //Get a parameter value
+    public String getParameter(String key, String def) {
+        return isStandalone ? System.getProperty(key, def) :
+                (getParameter(key) != null ? getParameter(key) : def);
+    }
+
+    //Construct the applet
+    public Applet1() {
+    }
+
+    //Initialize the applet
+    public void init() {
+        try {
+            jbInit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    //Component initialization
+    private void jbInit() throws Exception {
+        jPanel2.setBorder(border3);
+        jPanel2.setBounds(new Rectangle(3, 2, 157, 65));
+        jPanel3.setBorder(border4);
+        jPanel3.setBounds(new Rectangle(163, 2, 186, 64));
+        jTextField1.setText("0");
+        jTextField1.setBounds(new Rectangle(353, 3, 82, 21));
+        jRadioButton1.setSelected(true);
+        jRadioButton1.setText("CF");
+        jRadioButton2.setText("TF");
+        jRadioButton3.setText("TRX");
+        jRadioButton4.setText("TX");
+        jRadioButton5.setText("RX");
+        jRadioButton6.setText("TS");
+        jRadioButton7.setSelected(true);
+        jRadioButton7.setText("1A");
+        jRadioButton8.setText("1B");
+        jRadioButton9.setText("2A");
+
+        jRadioButton10.setSelectedIcon(null);
+        jRadioButton10.setText("1B");
+
+        jRadioButton11.setToolTipText("");
+        jRadioButton11.setText("2B");
+
+        jLabel1.setText("Internal:");
+        jLabel2.setText("External:");
+        jLabel3.setText("CF ");
+        jLabel3.setBounds(new Rectangle(134, 66, 56, 16));
+        jLabel4.setText("I1A:");
+        jLabel4.setBounds(new Rectangle(181, 67, 45, 17));
+        jLabel5.setText("0");
+        jLabel5.setBounds(new Rectangle(227, 67, 52, 17));
+        jLabel6.setText("CF I1A:0");
+        jLabel6.setBounds(new Rectangle(283, 70, 71, 14));
+        jLabel3.setVisible(false);
+        jLabel4.setVisible(false);
+        jLabel5.setVisible(false);
+        jLabel6.setVisible(false);
+        jButton1.setBounds(new Rectangle(353, 27, 82, 24));
+        jButton1.setText("Update");
+        jPanel1.setLayout(null);
+        this.setLayout(borderLayout2);
+        jPanel4.setLayout(borderLayout3);
+        jScrollPane1.setBounds(new Rectangle(3, 92, 481, 195));
+        jdbTextArea1.setText("jdbTextArea1");
+        jdbTextArea1.setColumnName("FAULT");
+        jdbTextArea1.setDataSet(queryDataSet1);
+        jdbLabel1.setText("jdbLabel1");
+        jdbLabel1.setColumnName("FAULTNAME");
+        jdbLabel1.setDataSet(queryDataSet1);
+        jdbLabel1.setBounds(new Rectangle(4, 70, 242, 20));
+        database1.setConnection(new ConnectionDescriptor("jdbc:odbc:MYSQLodbc",
+                "monty", "some_pass", false, "sun.jdbc.odbc.JdbcOdbcDriver"));
+        queryDataSet1.setQuery(new com.borland.dx.sql.dataset.QueryDescriptor(
+                database1, "SELECT * FROM rbs_fault", null, true, Load.ALL));
+        jPanel2.add(jRadioButton1, null);
+        jPanel2.add(jRadioButton2, null);
+        jPanel2.add(jRadioButton3, null);
+        jPanel2.add(jRadioButton5);
+        jPanel2.add(jRadioButton4, null);
+        jPanel2.add(jRadioButton6, null);
+        jPanel3.add(jLabel1);
+        jPanel3.add(jRadioButton7);
+        jPanel3.add(jRadioButton8);
+        jPanel3.add(jRadioButton9);
+        jPanel3.add(jLabel2);
+        jPanel3.add(jRadioButton10);
+        jPanel3.add(jRadioButton11);
+        jPanel1.add(jTextField1, null);
+        jPanel1.add(jButton1, null);
+        jPanel1.add(jLabel6, null);
+        jPanel1.add(jLabel5, null);
+        jPanel1.add(jLabel3, null);
+        jPanel1.add(jLabel4, null);
+        jPanel1.add(jPanel2, null);
+        jPanel1.add(jPanel3, null);
+        jPanel1.add(jScrollPane1);
+        jPanel1.add(jdbLabel1);
+        jScrollPane1.getViewport().add(jdbTextArea1);
+        buttonGroup1.add(jRadioButton1);
+        buttonGroup1.add(jRadioButton2);
+        buttonGroup1.add(jRadioButton3);
+        buttonGroup1.add(jRadioButton6);
+        buttonGroup1.add(jRadioButton4);
+        buttonGroup1.add(jRadioButton5);
+        buttonGroup2.add(jRadioButton7);
+        buttonGroup2.add(jRadioButton8);
+        buttonGroup2.add(jRadioButton9);
+        buttonGroup2.add(jRadioButton10);
+        buttonGroup2.add(jRadioButton11);
+        this.add(jPanel4, java.awt.BorderLayout.CENTER);
+        jPanel4.add(jPanel1, java.awt.BorderLayout.CENTER);
+    }
+
+    //Get Applet information
+    public String getAppletInfo() {
+        return "Applet Information";
+    }
+
+    //Get parameter info
+    public String[][] getParameterInfo() {
+        return null;
+    }
+}

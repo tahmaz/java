@@ -1,0 +1,33 @@
+[PropertyInfo]
+buffer,String,false,false, , ,false,<default>
+gridLayout1,java.awt.GridLayout,false,false, , ,false,<default>
+isare,char,false,false, , ,false,<default>
+JButton1,javax.swing.JButton,false,false, , ,false,<default>
+JButton10,javax.swing.JButton,false,false, , ,false,<default>
+JButton11,javax.swing.JButton,false,false, , ,false,<default>
+JButton12,javax.swing.JButton,false,false, , ,false,<default>
+JButton13,javax.swing.JButton,false,false, , ,false,<default>
+JButton14,javax.swing.JButton,false,false, , ,false,<default>
+JButton15,javax.swing.JButton,false,false, , ,false,<default>
+JButton16,javax.swing.JButton,false,false, , ,false,<default>
+JButton17,javax.swing.JButton,false,false, , ,false,<default>
+JButton18,javax.swing.JButton,false,false, , ,false,<default>
+JButton19,javax.swing.JButton,false,false, , ,false,<default>
+JButton2,javax.swing.JButton,false,false, , ,false,<default>
+JButton20,javax.swing.JButton,false,false, , ,false,<default>
+JButton21,javax.swing.JButton,false,false, , ,false,<default>
+JButton3,javax.swing.JButton,false,false, , ,false,<default>
+JButton4,javax.swing.JButton,false,false, , ,false,<default>
+JButton5,javax.swing.JButton,false,false, , ,false,<default>
+JButton6,javax.swing.JButton,false,false, , ,false,<default>
+JButton7,javax.swing.JButton,false,false, , ,false,<default>
+JButton8,javax.swing.JButton,false,false, , ,false,<default>
+JButton9,javax.swing.JButton,false,false, , ,false,<default>
+JPanel1,javax.swing.JPanel,false,false, , ,false,<default>
+JPanel2,javax.swing.JPanel,false,false, , ,false,<default>
+JTextField1,javax.swing.JTextField,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

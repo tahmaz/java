@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+
+Name: java/awt/BorderLayout.class
+
+Name: javax/swing/JPanel.class
+
+Name: javax/swing/JTextField.class
+
+Name: javax/swing/JButton.class
+
+Name: javax/swing/BorderFactory.class
+
+Name: javax/swing/border/Border.class
+
+Name: javax/swing/JRadioButton.class
+
+Name: javax/swing/JLabel.class
+
+Name: javax/swing/ButtonGroup.class
+
+Name: javax/swing/border/EtchedBorder.class
+
+Name: javax/swing/JScrollPane.class
+
+Name: com/borland/dx/sql/dataset/Database.class
+
+Name: com/borland/dbswing/JdbTextArea.class
+
+Name: com/borland/dbswing/JdbLabel.class
+
+Name: com/borland/dx/sql/dataset/QueryDataSet.class
+
